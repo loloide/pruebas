@@ -48,8 +48,8 @@ with open("text.txt", "r") as f:
 
 
 def borrar_persona():
-  with urllib.request.urlopen("https://run.mocky.io/v3/ab743856-d98d-44f8-bd1d-e916e883bd5c") as f:
-    mybytes = Person(f.read())
+  with open("text.txt", "w") as t:
+    p1 = Person(f.read())
   borrar = input("elemento a borrar: ")
   person = people.split("\n")
   person.remove(borrar)
