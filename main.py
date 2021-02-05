@@ -5,7 +5,7 @@ class Person:
   def __init__(self, people):
     self.people = people
 
-  def print_person(self):
+  def buscar_person(self):
     self.person = self.people.split("\n")
     largo = len(self.person)
     print("hay", largo, "personas")
@@ -43,13 +43,9 @@ class Person:
     f.write(self.new_person)
 
 
-with open("text.txt", "r") as f:
-  p1 = Person(f.read())
-
-
 def borrar_persona():
-  with urllib.request.urlopen("https://run.mocky.io/v3/ab743856-d98d-44f8-bd1d-e916e883bd5c") as f:
-    mybytes = Person(f.read())
+  with open("text.txt", "r") as f:
+    p1 = Person(f.read())
   borrar = input("elemento a borrar: ")
   person = people.split("\n")
   person.remove(borrar)
@@ -60,11 +56,14 @@ def borrar_persona():
   print("borrado")
   
 
+with open("text.txt", "r") as f:
+  p1 = Person(f.read())
+
 respuesta = input("que quiere hacer: ")
 if respuesta == ("buscar por nombre"):
   p1.buscar()
 if respuesta == ("buscar"):
-  p1.print_person()
+  p1.buscar_person()
   p1.print_cosa()
 if respuesta == ("agregar"):
   p1.add_person()
