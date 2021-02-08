@@ -63,6 +63,8 @@ class Person:
     print("borrado")
   
 
+
+
 with open("text.txt", "r") as f:
   p1 = Person(f.read())
 
