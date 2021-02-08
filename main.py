@@ -46,24 +46,21 @@ class Person:
 
   def add_person(self):
     self.new_person = input("introduzca nombre, apellido y edad separados por comas: ")
-    with open("text.txt", "a")
+    with open("text.txt", "a"):
       f.write("\n")
       f.write(self.new_person)
 
-
-def borrar_selec():
-  with open("text.txt", "r") as t:
-    p1 = Person(f.read())
-  self.borrar = input("elemento a borrar: ")
-
-def borrar(self):
-  person = people.split("\n")
-  person.remove(self.borrar)
-  with open("text2", "w") as t:
-    for p in person:
-      t.write(p)
-      t.write("\n")
-  print("borrado")
+  def borrar(self):
+    with open("text.txt", "r") as t:
+      p1 = Person(t.read())
+    self.borrar = input("elemento a borrar: ")
+    person = self.people.split("\n")
+    person.remove(self.borrar)
+    with open("text2", "w") as t:
+      for p in person:
+        t.write(p)
+        t.write("\n")
+    print("borrado")
   
 
 with open("text.txt", "r") as f:
@@ -81,5 +78,4 @@ if respuesta == ("buscar"):
 if respuesta == ("agregar"):
   p1.add_person()
 if respuesta == ("borrar"):
-  borrar_selec()
-  borrar()
+  p1.borrar()
