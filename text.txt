@@ -12,3 +12,5 @@ kaiki,deishuu,40
 solid,snake,24
 hola,soy german,100
 july,3p,25
+a,g,4
+a,d,4

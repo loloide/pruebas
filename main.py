@@ -46,9 +46,10 @@ class Person:
 
   def add_person(self):
     self.new_person = input("introduzca nombre, apellido y edad separados por comas: ")
-    with open("text.txt", "a"):
+    with open("text.txt", "a") as f:
       f.write("\n")
       f.write(self.new_person)
+    print("se agregó " ,self.new_person)
 
   def borrar(self):
     self.borrar = input("elemento a borrar: ")
