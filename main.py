@@ -46,7 +46,9 @@ class Person:
 
   def add_person(self):
     self.new_person = input("introduzca nombre, apellido y edad separados por comas: ")
-    f.write(self.new_person)
+    with open("text.txt", "a")
+      f.write("\n")
+      f.write(self.new_person)
 
 
 def borrar_selec():
