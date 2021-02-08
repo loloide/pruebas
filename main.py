@@ -59,8 +59,6 @@ class Person:
         t.write(p)
         t.write("\n")
     print("borrado")
-  
-
 
 
 with open("text.txt", "r") as f:
