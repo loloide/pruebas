@@ -9,6 +9,6 @@ shinobu,oshino,500+
 asriel,dremurr,20
 nadeko,sengoku,15
 kaiki,deishuu,40
-solid,skane,24
+solid,snake,24
 hola,soy german,100
 july,3p,25

@@ -51,8 +51,6 @@ class Person:
       f.write(self.new_person)
 
   def borrar(self):
-    with open("text.txt", "r") as t:
-      p1 = Person(t.read())
     self.borrar = input("elemento a borrar: ")
     person = self.people.split("\n")
     person.remove(self.borrar)
