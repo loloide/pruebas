@@ -62,8 +62,10 @@ class Person:
     print("borrado")
 
 
-with open("text.txt", "r") as f:
-  p1 = Person(f.read())
+
+f = urllib.request.urlopen("http://localhost:8000/codigo/pruebas/")
+p1 = Person(f.read)
+
 
 respuesta = input("que quiere hacer: ")
 if respuesta == ("buscar por nombre"):
