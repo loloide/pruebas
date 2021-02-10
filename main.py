@@ -62,8 +62,8 @@ class Person:
     print("borrado")
 
 
-urllib.request.urlopen("http://localhost:8000/codigo/pruebas/")
-p1 = Person(HTTPHandler.http_open())
+f = urllib.request.urlopen("http://localhost:8000/codigo/pruebas/")
+p1 = Person(FileHandler.file_open(f))
 
 
 respuesta = input("que quiere hacer: ")
