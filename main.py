@@ -1,5 +1,5 @@
 import urllib.request
-
+import urllib.response
 
 class Person:
   def __init__(self, people):
@@ -62,9 +62,8 @@ class Person:
     print("borrado")
 
 
-
-f = urllib.request.urlopen("http://localhost:8000/codigo/pruebas/")
-p1 = Person(f.read)
+urllib.request.urlopen("http://localhost:8000/codigo/pruebas/")
+p1 = Person(HTTPHandler.http_open())
 
 
 respuesta = input("que quiere hacer: ")
