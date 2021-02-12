@@ -1,15 +1,21 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import time
+import json
 
 hostName = "localhost"
 serverPort = 8080
 
+
+with open("data.json", "r") as f:
+    database = f.read()
+
+
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
-        self.send_response(404)
+        self.send_response(200)
         self.send_header("Content-type", "application/json")
         self.end_headers()
-        self.wfile.write(bytes('{"a":1}', "utf-8"))
+        self.wfile.write(bytes(database))
 
 if __name__ == "__main__":        
     webServer = HTTPServer((hostName, serverPort), MyServer)
