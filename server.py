@@ -14,7 +14,7 @@ class MyServer(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type', 'utf-8')
         self.end_headers()
-        self.wfile.write(bytes("{a:1}"))
+        self.wfile.write(bytes(database))
 
 
 if __name__ == "__main__":        

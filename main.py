@@ -63,8 +63,8 @@ class Person:
 
 
 f = urllib.request.urlopen("http://localhost:8000/codigo/pruebas/")
-codigo = f.read()
-print(codigo)
+p1 = Person(f.read())
+
 
 respuesta = input("que quiere hacer: ")
 if respuesta == ("buscar por nombre"):
