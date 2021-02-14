@@ -33,7 +33,7 @@ class MyServer(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type', 'application/json')
         self.end_headers()
-        self.wfile.write(bytes("hola", "utf-8"))
+        self.wfile.write(bytes(database, "utf-8"))
 
 
 if __name__ == "__main__":        
