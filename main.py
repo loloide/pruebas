@@ -62,7 +62,7 @@ class Person:
     print("borrado")
 
 
-f = urllib.request.urlopen("http://localhost:8000/codigo/pruebas/")
+f = urllib.request.urlopen("http://localhost:8080")
 p1 = Person(f.read())
 
 print(f)
