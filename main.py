@@ -63,21 +63,21 @@ class Person:
 
 
 f = urllib.request.urlopen("http://localhost:8080")
-p1 = Person(f.read())
+#p1 = Person(f.read())
 
-print(f)
+print(f.read)
 
 
-respuesta = input("que quiere hacer: ")
-if respuesta == ("buscar por nombre"):
-  p1.buscar()
-  p1.buscar_if()
-if respuesta == ("buscar"):
-  p1.buscar_person()
-  p1.print_person()
+#respuesta = input("que quiere hacer: ")
+#if respuesta == ("buscar por nombre"):
+#  p1.buscar()
+#  p1.buscar_if()
+#if respuesta == ("buscar"):
+#  p1.buscar_person()
+#  p1.print_person()
 #  p1.selec_cosa
 #  p1.print_cosa()
-if respuesta == ("agregar"):
-  p1.add_person()
-if respuesta == ("borrar"):
-  p1.borrar()
+#if respuesta == ("agregar"):
+#  p1.add_person()
+#if respuesta == ("borrar"):
+#  p1.borrar()
