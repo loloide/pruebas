@@ -61,11 +61,11 @@ class Person:
         t.write("\n")
     print("borrado")
 
+f = urllib.request.urlopen("http://localhost:8080/")
+read = f.read()
+p1 = Person(read)
 
-f = urllib.request.urlopen("http://localhost:8080")
-p1 = Person(f.read())
-
-print(f)
+print(read)
 
 
 respuesta = input("que quiere hacer: ")
