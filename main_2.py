@@ -8,6 +8,8 @@ class Person:
 
     def buscar(self):
         self.separated = self.people["users"]
+        self.person = self.separated.split("{")
+        print(self.person)
 
 
 f = urllib.request.urlopen("http://localhost:8080/")
