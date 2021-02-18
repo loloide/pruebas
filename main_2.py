@@ -7,8 +7,7 @@ class Person:
         self.people = json.loads(people)
 
     def buscar(self):
-        print(self.people["users"])
-        
+        self.separated = self.people["users"]
 
 
 f = urllib.request.urlopen("http://localhost:8080/")
