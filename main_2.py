@@ -8,7 +8,7 @@ class Person:
 
     def buscar(self):
         print(self.people["users"])
-
+        
 
 
 f = urllib.request.urlopen("http://localhost:8080/")
