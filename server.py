@@ -1,5 +1,9 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import time
+import requests
+import json
+
+
 
 hostName = "localhost"
 serverPort = 8080
@@ -8,6 +12,8 @@ serverPort = 8080
 with open("data.json", "r") as f:
     database = f.read()
 
+# r = requests.post('http://httpbin.org/post', json={"key": "value"})
+# r.json
 
 data = ["martin,silva,36",
         "lorenzo,de la cruz,15",

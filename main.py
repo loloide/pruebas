@@ -1,5 +1,7 @@
 import urllib.request
 import urllib.response
+import requests
+import json
 
 class Person:
   def __init__(self, people):
@@ -45,21 +47,32 @@ class Person:
       print("se encontró", self.busqueda)
 
   def add_person(self):
-    self.new_person = input("introduzca nombre, apellido y edad separados por comas: ")
-    with open("text.txt", "a") as f:
-      f.write("\n")
-      f.write(self.new_person)
-    print("se agregó " ,self.new_person)
+    #self.new_person = input("introduzca nombre, apellido y edad separados por comas: ")
+    nuevo_usuario = input ("agregue al nuevo usuario ")
+
+
+    with open("data.json", "a") as archivo:
+      json.dump(nuevo_usuario, archivo)
+      print("nuevo usuario generado")
+
+
+    #  f.write("\n")
+    #   f.write(self.new_person)
+    # print("se agregó " ,self.new_person)
+    #r = requests.post('http://localhost:8080/', json={"key": "value"})
+    
 
   def borrar(self):
     self.borrar = input("elemento a borrar: ")
-    person = self.people.split("\n")
+    #person = self.people.split("\n")
     person.remove(self.borrar)
-    with open("text2", "w") as t:
+    with open("data.json", "w") as t:
       for p in person:
         t.write(p)
         t.write("\n")
-    print("borrado")
+      print("borrado")
+
+
 
 f = urllib.request.urlopen("http://localhost:8080/")
 read = f.read()
