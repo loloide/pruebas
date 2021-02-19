@@ -53,11 +53,11 @@ class Person:
 #¿COMO AGREGARLO A LA LISTA USERS?
     
 
-  def borrar(self):
-    self.borrar = input("elemento a borrar: ")
-      with open("data.json", "r") as archivo:
-        archivo_str=archivo.read()
-        archivo_dict=json.loads(archivo_str)
+#  def borrar(self):
+#    self.borrar = input("elemento a borrar: ")
+#      with open("data.json", "r") as archivo:
+#        archivo_str=archivo.read()
+#        archivo_dict=json.loads(archivo_str)
 
 
 
