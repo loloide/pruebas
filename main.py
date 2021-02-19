@@ -60,14 +60,19 @@ class Person:
         archivo_dict["users"].append({"nombre":nuevo_usuario_nombre,"apellido":nuevo_usuario_apellido,"edad":nuevo_usuario_edad})
         json.dump(archivo_dict, archivo_escribible)
         print("Nuevo usuario generado")
-#¿COMO AGREGARLO A LA LISTA USERS?
-    
 
   def borrar(self):
-    self.borrar = input("elemento a borrar: ")
+      self.borrar = input("elemento a borrar: ")
       with open("data.json", "r") as archivo:
         archivo_str=archivo.read()
         archivo_dict=json.loads(archivo_str)
+      if ("nombre"== self.borrar):
+        with open('data.json') as data_file:
+          data = json.load(data_file)
+          for element in data: 
+            del element['users']
+            print("eliminado")
+
 
 
 
