@@ -13,7 +13,10 @@ class Person:
     self.busqueda = input("nombre: ")
     for i in self.people_separado:
       if ("nombre:", self.busqueda):
-        print("encontrado")
+        self.existe_persona = True
+    if self.existe_persona == True:
+      print("encontrado")
+      self.people_separado.index(self.busqueda)
 
 
   def selec_cosa(self):
