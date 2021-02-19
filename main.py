@@ -12,11 +12,9 @@ class Person:
     self.people_separado = self.people_encode["users"]
     self.busqueda = input("nombre: ")
     for i in self.people_separado:
-      if ("nombre:", self.busqueda):
-        self.existe_persona = True
-    if self.existe_persona == True:
-      print("encontrado")
-      self.people_separado.index(self.busqueda)
+      if ("nombre:", self.busqueda) == True:
+        print("encontrado")
+      
 
 
   def selec_cosa(self):
