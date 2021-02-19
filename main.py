@@ -48,29 +48,26 @@ class Person:
 
   def add_person(self):
     #self.new_person = input("introduzca nombre, apellido y edad separados por comas: ")
-    nuevo_usuario = input ("agregue al nuevo usuario ")
+    nuevo_usuario_nombre = input ("Agregue el nombre del nuevo usuario: ")
+    nuevo_usuario_apellido = input ("Agregue el apellido del nuevo usuario: ")
+    nuevo_usuario_edad = input ("Agregue la edad del nuevo usuario: ")
 
 
-    with open("data.json", "a") as archivo:
-      json.dump(nuevo_usuario, archivo)
-      print("nuevo usuario generado")
-
-
-    #  f.write("\n")
-    #   f.write(self.new_person)
-    # print("se agregó " ,self.new_person)
-    #r = requests.post('http://localhost:8080/', json={"key": "value"})
+    with open("data.json", "r") as archivo:
+      archivo_str=archivo.read()
+      archivo_dict=json.loads(archivo_str)
+      with open ("data.json", "w")as archivo_escribible:
+        archivo_dict["users"].append({"nombre":nuevo_usuario_nombre,"apellido":nuevo_usuario_apellido,"edad":nuevo_usuario_edad})
+        json.dump(archivo_dict, archivo_escribible)
+        print("Nuevo usuario generado")
+#¿COMO AGREGARLO A LA LISTA USERS?
     
 
   def borrar(self):
     self.borrar = input("elemento a borrar: ")
-    #person = self.people.split("\n")
-    person.remove(self.borrar)
-    with open("data.json", "w") as t:
-      for p in person:
-        t.write(p)
-        t.write("\n")
-      print("borrado")
+      with open("data.json", "r") as archivo:
+        archivo_str=archivo.read()
+        archivo_dict=json.loads(archivo_str)
 
 
 

@@ -1,47 +1,94 @@
-{"users":[
-    {"nombre":"martin",
-    "apellido":"silva",
-    "edad":"36"},
-    {"nombre":"lorenzo",
-    "apellido":"de la cruz",
-    "edad":"15"},
-    {"nombre":"koyomi",
-    "apellido":"araragi",
-    "edad":17},
-    {"nombre":"surga",
-    "apellido":"kanbaru",
-    "edad":16},
-    {"nombre":"izuko",
-    "apellido":"gaen",
-    "edad":26},
-    {"nombre":"revolver",
-    "apellido":"ocelot",
-    "edad":68},
-    {"nombre":"oikura",
-    "apellido":"sodachi",
-    "edad":17},
-    {"nombre": "shinobu",
-    "apellido":"oshino",
-    "edad":"500+"},
-    {"nombre":"asriel",
-    "apellido":"dremurr",
-    "edad":"20"},
-    {"nombre":"nadeko",
-    "apellido":"sengoku",
-    "edad":"15"},
-    {"nombre":"kaiki",
-    "apellido":"deishuu",
-    "edad":"40"},
-    {"nombre":"solid",
-    "apellido":"snake",
-    "edad":"24"},
-    {"nombre":"solid",
-    "apellido":"snake",
-    "edad":"24"},
-    {"nombre":"hola",
-    "apellido":"soy german",
-    "edad":"100"},
-    {"nombre":"july",
-    "apellido":"3p",
-    "edad":"25"}  
-]}
+{
+    "users": [
+        {
+            "nombre": "martin",
+            "apellido": "silva",
+            "edad": "36"
+        },
+        {
+            "nombre": "lorenzo",
+            "apellido": "de la cruz",
+            "edad": "15"
+        },
+        {
+            "nombre": "koyomi",
+            "apellido": "araragi",
+            "edad": 17
+        },
+        {
+            "nombre": "surga",
+            "apellido": "kanbaru",
+            "edad": 16
+        },
+        {
+            "nombre": "izuko",
+            "apellido": "gaen",
+            "edad": 26
+        },
+        {
+            "nombre": "revolver",
+            "apellido": "ocelot",
+            "edad": 68
+        },
+        {
+            "nombre": "oikura",
+            "apellido": "sodachi",
+            "edad": 17
+        },
+        {
+            "nombre": "shinobu",
+            "apellido": "oshino",
+            "edad": "500+"
+        },
+        {
+            "nombre": "asriel",
+            "apellido": "dremurr",
+            "edad": "20"
+        },
+        {
+            "nombre": "nadeko",
+            "apellido": "sengoku",
+            "edad": "15"
+        },
+        {
+            "nombre": "kaiki",
+            "apellido": "deishuu",
+            "edad": "40"
+        },
+        {
+            "nombre": "solid",
+            "apellido": "snake",
+            "edad": "24"
+        },
+        {
+            "nombre": "solid",
+            "apellido": "snake",
+            "edad": "24"
+        },
+        {
+            "nombre": "hola",
+            "apellido": "soy german",
+            "edad": "100"
+        },
+        {
+            "nombre": "july",
+            "apellido": "3p",
+            "edad": "25"
+        },
+        {
+            "nombre": "Juan",
+            "apellido": "Perez",
+            "edad": "23"
+        },
+        {
+            "nombre": "Juan",
+            "apellido": "Dominguez",
+            "edad": "81928"
+        },
+        {
+            "nombre": "Lionel",
+            "apellido": "Messi",
+            "edad": "34"
+        }
+    ]
+}
