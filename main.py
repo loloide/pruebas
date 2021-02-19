@@ -7,15 +7,14 @@ class Person:
   def __init__(self, people):
     self.people = people
 
-  def buscar_person(self):
-    self.person = self.people.split("\n")
-    largo = len(self.person)
-    print("hay", largo, "personas")
-    selectperson = input("selecciona la persona: ")
-    self.selected_person = self.person[int(selectperson)]
+  def buscar(self):
+    self.people_encode = json.loads(self.people)
+    self.people_separado = self.people_encode["users"]
+    self.busqueda = input("nombre: ")
+    for i in self.people_separado:
+      if ("nombre:", self.busqueda):
+        print("encontrado")
 
-  def print_person(self):
-    print(self.selected_person)
 
   def selec_cosa(self):
     separadas = self.selected_person.split(",")
@@ -36,15 +35,6 @@ class Person:
 
   def print_cosa(self):
     print(self.final)
-
-  def buscar(self):
-    self.person = self.people.split("\n")
-    print(self.person)
-    self.busqueda = input("buscar: ")
-
-  def buscar_if(self):
-    if self.busqueda.lower() in self.person:
-      print("se encontró", self.busqueda)
 
   def add_person(self):
     #self.new_person = input("introduzca nombre, apellido y edad separados por comas: ")
@@ -78,16 +68,12 @@ f = urllib.request.urlopen("http://localhost:8080/")
 read = f.read()
 p1 = Person(read)
 
-print(read)
+#print(read)
 
 
 respuesta = input("que quiere hacer: ")
-if respuesta == ("buscar por nombre"):
-  p1.buscar()
-  p1.buscar_if()
 if respuesta == ("buscar"):
-  p1.buscar_person()
-  p1.print_person()
+  p1.buscar()
 #  p1.selec_cosa
 #  p1.print_cosa()
 if respuesta == ("agregar"):
