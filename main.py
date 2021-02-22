@@ -20,6 +20,11 @@ class Person:
       #   print("si")
 
 
+  def print_a(self):
+    self.people_encode = json.loads(self.people)
+    self.people_separado = self.people_encode["users"]
+    print(self.people_separado)
+
   def add_person(self):
     #self.new_person = input("introduzca nombre, apellido y edad separados por comas: ")
     nuevo_usuario_nombre = input ("Agregue el nombre del nuevo usuario: ")
@@ -36,33 +41,32 @@ class Person:
         print("Nuevo usuario generado")
 
 
-  def borrar(self):
-     #<------------INTENTO 2------------------->
-    with open("data.json", "r") as archivo:
-      archivo_str=archivo.read()
-      archivo_dict=json.loads(archivo_str)
 
-      self.people_separado = archivo_dict["users"]
-      self.busqueda = input("nombre: ")
-      for p in self.people_separado:
-        if self.busqueda.lower() in p["nombre"].lower():
-      # for i in self.people_separado:
-      #   if ("nombre:", self.busqueda):
-      #     self.existe_persona = True
-      #   if self.existe_persona == True:
-          
-          with open('data.json') as data_file:
-            data = json.load(data_file)
-
-          for element in data:
-            if 'nombre: ' in element:
-                del element['users']
+  def borrar_2(self):
+    self.people_encode = json.loads(self.people)
+    self.people_separado = self.people_encode["users"]
+    self.busqueda = input("nombre: ")
+    self.people_separado
+    for p in self.people_separado:
+      if self.busqueda.lower() in p["nombre"].lower():
+        print(p)
+        #with open ("data.json", "w")as archivo_escribible:
+        
 
 
 
-
-
-            print ("eliminado")    
+#  def borrar(self):
+#    with open("data.json", "r") as archivo:
+#      archivo_str=archivo.read()
+#    archivo_dict=json.loads(archivo_str)
+#    self.people_separado = archivo_dict["users"]
+#    self.busqueda = input("nombre: ")
+#    for q in self.people_separado:
+#      if self.busqueda.lower() in q["nombre"].lower():
+#        f = open("data.json", "w")
+#        persona_borrada = archivo_dict.remove(p)
+#        json.dumps(persona_borrada, f)
+#    print ("eliminado")
 
 #<------------INTENTO 1-------------->
       # self.borrar = input("elemento a borrar: ")
@@ -76,9 +80,6 @@ class Person:
       #       del element['users']
       #       print("eliminado")
 
- 
-
-
 
 
 f = urllib.request.urlopen("http://localhost:8080/")
@@ -91,9 +92,9 @@ p1 = Person(read)
 respuesta = input("que quiere hacer: ")
 if respuesta == ("buscar"):
   p1.buscar()
-#  p1.selec_cosa
-#  p1.print_cosa()
+if respuesta == ("print"):
+  p1.print_a()
 if respuesta == ("agregar"):
   p1.add_person()
 if respuesta == ("borrar"):
-  p1.borrar()
+  p1.borrar_2()
