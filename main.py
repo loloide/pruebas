@@ -50,8 +50,7 @@ class Person:
     for p in self.people_separado:
       if self.busqueda.lower() in p["nombre"].lower():
         print(p)
-        a = self.people_separado.index(int[self.busqueda])
-        print(a)
+        del self.busqueda
 
         #with open("data.json", "w") as f:
 
