@@ -11,7 +11,7 @@ class Person:
     self.people_encode = json.loads(self.people)
     self.people_separado = self.people_encode["users"]
     self.busqueda = input("nombre: ")
-    print(self.people_separado)
+    self.people_separado
     for p in self.people_separado:
       if self.busqueda.lower() in p["nombre"].lower():
         print("si")
