@@ -50,8 +50,11 @@ class Person:
     for p in self.people_separado:
       if self.busqueda.lower() in p["nombre"].lower():
         print(p)
-        #with open ("data.json", "w")as archivo_escribible:
-        
+        a = self.people_separado.index(int[self.busqueda])
+        print(a)
+
+        #with open("data.json", "w") as f:
+
 
 
 
