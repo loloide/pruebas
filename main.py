@@ -20,26 +20,6 @@ class Person:
       #   print("si")
 
 
-  def selec_cosa(self):
-    separadas = self.selected_person.split(",")
-    if len(separadas) <4:
-      print("no tiene allias")
-    seleccionada = input("selecciona la caracteristica: ")
-
-    if seleccionada == ("name"):
-      seleccionada = 0
-    if seleccionada == ("lastname"):
-      seleccionada = 1
-    if seleccionada == ("age"):
-      seleccionada = 2
-    if seleccionada == ("allias"):
-      seleccionada = 3
-
-    self.final = separadas[int(seleccionada)]
-
-  def print_cosa(self):
-    print(self.final)
-
   def add_person(self):
     #self.new_person = input("introduzca nombre, apellido y edad separados por comas: ")
     nuevo_usuario_nombre = input ("Agregue el nombre del nuevo usuario: ")
