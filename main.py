@@ -44,15 +44,17 @@ class Person:
 
       self.people_separado = archivo_dict["users"]
       self.busqueda = input("nombre: ")
-      for i in self.people_separado:
-        if ("nombre:", self.busqueda):
-            self.existe_persona = True
-        if self.existe_persona == True:
+      for p in self.people_separado:
+        if self.busqueda.lower() in p["nombre"].lower():
+      # for i in self.people_separado:
+      #   if ("nombre:", self.busqueda):
+      #     self.existe_persona = True
+      #   if self.existe_persona == True:
           
-         with open('data.json') as data_file:
-          data = json.load(data_file)
+          with open('data.json') as data_file:
+            data = json.load(data_file)
 
-        for element in data:
+          for element in data:
             if 'nombre: ' in element:
                 del element['users']
 
