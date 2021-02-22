@@ -11,12 +11,13 @@ class Person:
     self.people_encode = json.loads(self.people)
     self.people_separado = self.people_encode["users"]
     self.busqueda = input("nombre: ")
-    for i in self.people_separado:
-      if ("nombre:", self.busqueda):
-        self.existe_persona = True
-    if self.existe_persona == True:
-      print("encontrado")
-      self.people_separado.index(self.busqueda)
+    print(self.people_separado)
+    for p in self.people_separado:
+      if self.busqueda.lower() in p["nombre"].lower():
+        print("si")
+        print(p)
+      # if ('"nombre":', self.busqueda) in self.people_separado:
+      #   print("si")
 
 
   def selec_cosa(self):
