@@ -56,17 +56,44 @@ class Person:
 
 
   def borrar(self):
-      self.borrar = input("elemento a borrar: ")
-      with open("data.json", "r") as archivo:
-        archivo_str=archivo.read()
-        archivo_dict=json.loads(archivo_str)
-      if ("nombre"== self.borrar):
-        with open('data.json') as data_file:
-          data = json.load(data_file)
-          for element in data: 
-            del element['users']
-            print("eliminado")
+     #<------------INTENTO 2------------------->
+    with open("data.json", "r") as archivo:
+      archivo_str=archivo.read()
+      archivo_dict=json.loads(archivo_str)
 
+      self.people_separado = archivo_dict["users"]
+      self.busqueda = input("nombre: ")
+      for i in self.people_separado:
+        if ("nombre:", self.busqueda):
+            self.existe_persona = True
+        if self.existe_persona == True:
+          
+         with open('data.json') as data_file:
+          data = json.load(data_file)
+
+        for element in data:
+            if 'nombre: ' in element:
+                del element['users']
+
+
+
+
+
+            print ("eliminado")    
+
+#<------------INTENTO 1-------------->
+      # self.borrar = input("elemento a borrar: ")
+      # with open("data.json", "r") as archivo:
+      #   archivo_str=archivo.read()
+      #   archivo_dict=json.loads(archivo_str)
+      # if ("nombre"== self.borrar):
+      #   with open('data.json') as data_file:
+      #     data = json.load(data_file)
+      #     for element in data: 
+      #       del element['users']
+      #       print("eliminado")
+
+ 
 
 
 

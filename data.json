@@ -89,6 +89,21 @@
             "nombre": "Lionel",
             "apellido": "Messi",
             "edad": "34"
+        },
+        {
+            "nombre": "JuanRoman",
+            "apellido": "Riquelme",
+            "edad": "10"
+        },
+        {
+            "nombre": "pepito",
+            "apellido": "pepoin",
+            "edad": "123"
+        },
+        {
+            "nombre": "Camila",
+            "apellido": "Torrez",
+            "edad": "23"
         }
     ]
 }
