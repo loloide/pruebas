@@ -35,10 +35,10 @@ class Person:
     with open("data.json", "r") as archivo:
       archivo_str=archivo.read()
       archivo_dict=json.loads(archivo_str)
-      with open ("data.json", "w")as archivo_escribible:
-        archivo_dict["users"].append({"nombre":nuevo_usuario_nombre,"apellido":nuevo_usuario_apellido,"edad":nuevo_usuario_edad})
-        json.dump(archivo_dict, archivo_escribible)
-        print("Nuevo usuario generado")
+    with open ("data.json", "w")as archivo_escribible:
+      archivo_dict["users"].append({"nombre":nuevo_usuario_nombre,"apellido":nuevo_usuario_apellido,"edad":nuevo_usuario_edad})
+      json.dump(archivo_dict, archivo_escribible)
+      print("Nuevo usuario generado")
 
 
 
@@ -50,11 +50,35 @@ class Person:
     for p in self.people_separado:
       if self.busqueda.lower() in p["nombre"].lower():
         print(p)
-        del self.busqueda
+        
 #        with open("data.json", "w") as f:
 
-
-
+  def editar(self):
+    f = urllib.request.urlopen("http://localhost:8080/")
+    file = urllib.request.urlopen("http://localhost:8080/")
+    self.people_encode = json.loads(f.read())
+    data = json.loads(file.read())
+    self.people_separado = self.people_encode["users"]
+    self.busqueda = input("nombre persona a editar: ")
+    self.people_separado
+    for p in self.people_separado:
+      if self.busqueda.lower() in p["nombre"].lower():
+        new_data = {}
+        editar = input("editar: ")
+        if editar == "nombre":
+          self.editar_nombre = input("cambiar nombre: ")
+          new_data[p['nombre']] = {self.editar_nombre}
+          data.update(new_data)
+        if editar == "apellido":
+          self.editar_apellido = input("cambiar apellido: ")
+        if editar == "edad":
+          self.editar_edad = input("cambiar edad: ")
+        json.dump(data, file)
+        break
+    else:
+      print("no se encontró")
+      
+    
 
 #  def borrar(self):
 #    with open("data.json", "r") as archivo:
@@ -98,3 +122,5 @@ if respuesta == ("agregar"):
   p1.add_person()
 if respuesta == ("borrar"):
   p1.borrar_2()
+if respuesta == ("editar"):
+  p1.editar()
