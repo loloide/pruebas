@@ -41,6 +41,10 @@ class MyServer(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(bytes(database, "utf-8"))
 
+    def do_POST(self):
+        self.send_response(200)
+        self.send_header('content')
+
 
 if __name__ == "__main__":        
     webServer = HTTPServer((hostName, serverPort), MyServer)
