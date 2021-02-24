@@ -51,8 +51,7 @@ class Person:
       if self.busqueda.lower() in p["nombre"].lower():
         print(p)
         del self.busqueda
-
-        #with open("data.json", "w") as f:
+#        with open("data.json", "w") as f:
 
 
 
@@ -83,9 +82,8 @@ class Person:
       #       print("eliminado")
 
 
-
 f = urllib.request.urlopen("http://localhost:8080/")
-read = f.read()
+read = Person(f.read())
 p1 = Person(read)
 
 #print(read)
