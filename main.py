@@ -48,9 +48,8 @@ class Person:
     
     archivo_str = url.read()
     self.archivo_dict = json.loads(archivo_str)
-    self.archivo_dict["users"].append({"nombre":self.nuevo_usuario_nombre,"apellido":self.nuevo_usuario_apellido,"edad":self.nuevo_usuario_edad})
-    requests.post("http://localhost:8080/", self.archivo_dict)
-    print("Nuevo usuario generado")
+    payload = {"nombre":self.nuevo_usuario_nombre,"apellido":self.nuevo_usuario_apellido,"edad":self.nuevo_usuario_edad}
+    r = requests.post("http://localhost:8080/", json=payload)
 
   def borrar_2(self):
     self.people_encode = json.loads(self.people)
@@ -89,6 +88,7 @@ class Person:
 
 f = urllib.request.urlopen("http://localhost:8080/")
 p1 = Person(f.read())
+
 
 respuesta = input("que quiere hacer: ")
 if respuesta == ("buscar"):

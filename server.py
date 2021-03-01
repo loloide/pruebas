@@ -1,9 +1,8 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
-import time
 import requests
 import json
-
-
+import urllib
+import subprocess
 
 hostName = "localhost"
 serverPort = 8080
@@ -12,42 +11,30 @@ serverPort = 8080
 with open("data.json", "r") as f:
     database = f.read()
 
-# r = requests.post('http://httpbin.org/post', json={"key": "value"})
-# r.json
-
-data = ["martin,silva,36",
-        "lorenzo,de la cruz,15",
-        "koyomi,araragi,17",
-        "suruga,kanbaru,16",
-        "izuko,gaen,26",
-        "ocelot,revolver,68,shalashaska",
-        "sodachi,oikura,17",
-        "shinobu,oshino,500+",
-        "asriel,dremurr,20",
-        "nadeko,sengoku,15",
-        "kaiki,deishuu,40",
-        "solid,snake,24",
-        "hola,soy german,100",
-        "july,3p,25",
-        "a,g,4",
-        "a,d,4"]
-
-
 
 class MyServer(BaseHTTPRequestHandler):
+
+    def _set_headers(self):
+        self.send_response(200)
+        self.send_header('Content-type', 'application/json')
+        self.end_headers()
+
+
     def do_GET(self):
         self.send_response(200)
         self.send_header('Content-type', 'application/json')
         self.end_headers()
         self.wfile.write(bytes(database, "utf-8"))
     
-#    def do_POST(self):
-#        content_length = int(self.headers['Content-Length']) # <--- Gets the size of data
-#        post_data = self.rfile.read(content_length) # <--- Gets the data itself
-#        str(self.path), str(self.headers), post_data.decode('utf-8')
-#
-#        self._set_response()
-#        self.wfile.write("POST request for {}".format(self.path).encode('utf-8'))
+    
+    def do_POST(self):
+        self._set_headers()
+        parsed_path = urllib.parse.urlparse(self.path)
+        request_id = parsed_path.path
+        response = subprocess.check_output(["data.json", request_id])
+        self.wfile.write(json.dumps(response))
+
+        
         
 
 
