@@ -43,23 +43,9 @@ class MyServer(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(bytes(database, "utf-8"))
     
-    def parse_POST(self):
-        ctype, pdict = parse_header(self.headers['content-type'])
-        if ctype == 'multipart/form-data':
-            postvars = parse_multipart(self.rfile, pdict)
-        elif ctype == 'application/x-www-form-urlencoded':
-            length = int(self.headers['content-length'])
-            postvars = parse_qs(
-                    self.rfile.read(length), 
-                    keep_blank_values=1)
-        else:
-            postvars = {}
-        return postvars
-
     def do_POST(self):
-        postvars = self.parse_POST()
-        print(postvars)
         self.send_response(200)
+        
 
 
 
