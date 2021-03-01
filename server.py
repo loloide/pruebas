@@ -3,13 +3,13 @@ import requests
 import json
 import urllib
 import subprocess
+from cgi import parse_header, parse_multipart
+from urllib.parse import parse_qs
 
 hostName = "localhost"
 serverPort = 8080
 
 
-with open("data.json", "r") as f:
-    database = f.read()
 
 
 class MyServer(BaseHTTPRequestHandler):
@@ -24,18 +24,38 @@ class MyServer(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type', 'application/json')
         self.end_headers()
+        with open("data.json", "r") as f:
+            database = f.read()
         self.wfile.write(bytes(database, "utf-8"))
     
-    
+    def parse_POST(self):
+        ctype, pdict = parse_header(self.headers['content-type'])
+        if ctype == 'multipart/form-data':
+            postvars = parse_multipart(self.rfile, pdict)
+        elif ctype == 'application/x-www-form-urlencoded':
+            length = int(self.headers['content-length'])
+            postvars = parse_qs(
+                    self.rfile.read(length), 
+                    keep_blank_values=1)
+        else:
+            postvars = {}
+        return postvars
+
     def do_POST(self):
         self._set_headers()
         parsed_path = urllib.parse.urlparse(self.path)
         request_id = parsed_path.path
-        response = subprocess.check_output(["data.json", request_id])
-        self.wfile.write(json.dumps(response))
 
+        postvars = self.parse_POST()
+
+        with open("data.json", "r") as f:
+            database = f.read()
+        self.users = json.loads(database)
+        self.wfile.write(bytes(database, "utf-8"))
+        with open ("data.json", "a")as archivo_escribible:
+            json.dump(postvars, archivo_escribible)
         
-        
+
 
 
 

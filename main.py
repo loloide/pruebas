@@ -49,7 +49,7 @@ class Person:
     archivo_str = url.read()
     self.archivo_dict = json.loads(archivo_str)
     payload = {"nombre":self.nuevo_usuario_nombre,"apellido":self.nuevo_usuario_apellido,"edad":self.nuevo_usuario_edad}
-    r = requests.post("http://localhost:8080/", json=payload)
+    r = requests.post("http://localhost:8080/", data=payload)
 
   def borrar_2(self):
     self.people_encode = json.loads(self.people)
