@@ -88,8 +88,7 @@ class Person:
       
 
 f = urllib.request.urlopen("http://localhost:8080/")
-read = Person(f.read())
-p1 = Person(read)
+p1 = Person(f.read())
 
 respuesta = input("que quiere hacer: ")
 if respuesta == ("buscar"):

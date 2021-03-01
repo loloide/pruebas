@@ -2,8 +2,6 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import time
 import requests
 import json
-from cgi import parse_header, parse_multipart
-from urllib.parse import parse_qs
 
 
 
@@ -43,8 +41,13 @@ class MyServer(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(bytes(database, "utf-8"))
     
-    def do_POST(self):
-        self.send_response(200)
+#    def do_POST(self):
+#        content_length = int(self.headers['Content-Length']) # <--- Gets the size of data
+#        post_data = self.rfile.read(content_length) # <--- Gets the data itself
+#        str(self.path), str(self.headers), post_data.decode('utf-8')
+#
+#        self._set_response()
+#        self.wfile.write("POST request for {}".format(self.path).encode('utf-8'))
         
 
 
