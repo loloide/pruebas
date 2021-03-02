@@ -52,7 +52,7 @@ class MyServer(BaseHTTPRequestHandler):
             database = f.read()
         self.users = json.loads(database)
         self.wfile.write(bytes(database, "utf-8"))
-        with open ("data.json", "a")as archivo_escribible:
+        with open ("data.json", "a") as archivo_escribible:
             json.dump(postvars, archivo_escribible)
         
 
