@@ -19,24 +19,6 @@ class Person:
       if self.busqueda.lower() in p["nombre"].lower():
         print("si")
         print(p)
-      # if ('"nombre":', self.busqueda) in self.people_separado:
-      #   print("si")
-
-
-#  def add_person(self):
-#    #self.new_person = input("introduzca nombre, apellido y edad separados por comas: ")
-#    nuevo_usuario_nombre = input ("Agregue el nombre del nuevo usuario: ")
-#    nuevo_usuario_apellido = input ("Agregue el apellido del nuevo usuario: ")
-#    nuevo_usuario_edad = input ("Agregue la edad del nuevo usuario: ")
-#
-#
-#    with open("data.json", "r") as archivo:
-#      archivo_str=archivo.read()
-#      archivo_dict=json.loads(archivo_str)
-#    with open ("data.json", "w")as archivo_escribible:
-#      archivo_dict["users"].append({"nombre":nuevo_usuario_nombre,"apellido":nuevo_usuario_apellido,"edad":nuevo_usuario_edad})
-#      json.dump(archivo_dict, archivo_escribible)
-#      print("Nuevo usuario generado")
 
 
   def add_person(self):
@@ -50,6 +32,7 @@ class Person:
     self.archivo_dict = json.loads(archivo_str)
     payload = {"nombre":self.nuevo_usuario_nombre,"apellido":self.nuevo_usuario_apellido,"edad":self.nuevo_usuario_edad}
     r = requests.post("http://localhost:8080/", data=payload)
+
 
   def borrar_2(self):
     self.people_encode = json.loads(self.people)

@@ -63,9 +63,7 @@ class MyServer(BaseHTTPRequestHandler):
             archivo_escribible.write(json.dumps(self.users))
         
         verificar_edit = self.users["users"].append({
-            "nombre":postvars[b"nombre"][0].decode("utf-8") ,
-            "apellido":postvars[b"apellido"][0].decode("utf-8") ,
-            "edad":postvars[b"edad"][0].decode("utf-8") 
+            "nombre":postvars[b"nombre"][0].decode("utf-8")
 
 
 
