@@ -68,6 +68,7 @@ class Person:
     self.people_separado
     for p in self.people_separado:
       if self.busqueda.lower() in p["nombre"].lower():
+        print(p)
         editar = input("editar: ")
         if editar == "nombre":
           self.editar_nombre = input("cambiar nombre: ")
@@ -77,9 +78,13 @@ class Person:
         if editar == "apellido":
           self.editar_apellido = input("cambiar apellido: ")
           p['apellido'] = {self.editar_apellido}
+          payload = p
+          f = requests.post("http://localhost:8080/", data=payload)
         if editar == "edad":
           self.editar_edad = input("cambiar edad: ")
           p['edad'] = {self.editar_edad}
+          payload = p
+          f = requests.post("http://localhost:8080/", data=payload)
         break
     else:
       print("no se encontró")
