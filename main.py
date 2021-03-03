@@ -62,28 +62,28 @@ class Person:
 
   def editar(self):
     f = urllib.request.urlopen("http://localhost:8080/")
-    file = urllib.request.urlopen("http://localhost:8080/")
     self.people_encode = json.loads(f.read())
-    data = json.loads(file.read())
     self.people_separado = self.people_encode["users"]
     self.busqueda = input("nombre persona a editar: ")
     self.people_separado
     for p in self.people_separado:
       if self.busqueda.lower() in p["nombre"].lower():
-        new_data = {}
         editar = input("editar: ")
         if editar == "nombre":
           self.editar_nombre = input("cambiar nombre: ")
-          new_data[p['nombre']] = {self.editar_nombre}
-          data.update(new_data)
+          p['nombre'] = {self.editar_nombre}
+          payload = p
+          f = requests.post("http://localhost:8080/", data=payload)
         if editar == "apellido":
           self.editar_apellido = input("cambiar apellido: ")
+          p['apellido'] = {self.editar_apellido}
         if editar == "edad":
           self.editar_edad = input("cambiar edad: ")
-        json.dump(data, file)
+          p['edad'] = {self.editar_edad}
         break
     else:
       print("no se encontró")
+
       
 
 f = urllib.request.urlopen("http://localhost:8080/")

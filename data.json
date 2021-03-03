@@ -61,11 +61,6 @@
             "edad": "24"
         },
         {
-            "nombre": "solid",
-            "apellido": "snake",
-            "edad": "24"
-        },
-        {
             "nombre": "hola",
             "apellido": "soy german",
             "edad": "100"
@@ -107,6 +102,16 @@
         },
         {
             "nombre": "sas",
+            "apellido": "slav",
+            "edad": "35"
+        },
+        {
+            "nombre": "juan",
+            "apellido": "a",
+            "edad": "3"
+        },
+        {
+            "nombre": "gopnik",
             "apellido": "slav",
             "edad": "35"
         }
