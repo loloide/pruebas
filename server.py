@@ -52,8 +52,10 @@ class MyServer(BaseHTTPRequestHandler):
             database = f.read()
         self.users = json.loads(database)
         self.wfile.write(bytes(database, "utf-8"))
+        
         with open ("data.json", "a")as archivo_escribible:
             self.users["users"].append({"nombre":postvars['b"nombre"'],"apellido":postvars['b"apellido"'],"edad":postvars['b"edad"']})
+
         
 
 
