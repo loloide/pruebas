@@ -62,8 +62,14 @@ class MyServer(BaseHTTPRequestHandler):
             })
             archivo_escribible.write(json.dumps(self.users))
         
-        verificar_edit = self.users["users"].append({
-            "nombre":postvars[b"nombre"][0].decode("utf-8")
+    def do_PUT(self):
+        self._set_headers()
+        length = int(self.headers["Content-Length"])
+        path = self.translate_path(self.path)
+        with open(path, "wb") as dst:
+            dst.write(self.rfile.read(length))
+
+
 
 
 

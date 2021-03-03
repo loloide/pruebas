@@ -57,19 +57,19 @@ class Person:
           self.editar_nombre = input("cambiar nombre: ")
           p['nombre'] = {self.editar_nombre}
           payload = p
-          f = requests.post("http://localhost:8080/", data=payload)
+          f = requests.put("http://localhost:8080/", data=payload)
           print("se editó a ",)
         if editar == "apellido":
           self.editar_apellido = input("cambiar apellido: ")
           p['apellido'] = {self.editar_apellido}
           payload = p
-          f = requests.post("http://localhost:8080/", data=payload)
+          f = requests.put("http://localhost:8080/", data=payload)
           print("se editó a ", payload)
         if editar == "edad":
           self.editar_edad = input("cambiar edad: ")
           p['edad'] = {self.editar_edad}
           payload = p
-          f = requests.post("http://localhost:8080/", data=payload)
+          f = requests.put("http://localhost:8080/", data=payload)
           print("se editó a ", payload)
         break
     else:
